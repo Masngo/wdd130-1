@@ -1,130 +1,262 @@
-<!DOCTYPE html>
-<html lang="en-US">
+:root {
+    --primary-color: #0b3c5d;
+    --secondary-color: #328cc1;
+    --accent1-color: #d9b310;
+    --accent2-color: #1d2731;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    --heading-font: Georgia, serif;
+    --body-font: Arial, sans-serif;
 
-    <meta name="description"
-      content="Contact Zambezi White Water Rafting for bookings, questions, and adventure trip information.">
-    <meta name="author" content="Masango Dewheretsoko">
+    /* UI colors derived from variables for consistency */
+    --muted-bg: #eee;
+    --muted-border: #999;
+    --text-on-primary: #ffffff;
+    --link-text: #000000;
+}
 
-    <title>Contact Us | Zambezi White Water Rafting</title>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <link rel="stylesheet" href="styles/rafting.css">
-</head>
+html, body {
+    height: 100%;
+}
 
-<body>
+/* BASE STYLES */
+body {
+    font-family: var(--body-font);
+    color: var(--accent2-color);
+    background-color: #ffffff;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 20px;
+}
 
-    <header>
-        <img src="images/logo.png" alt="Zambezi White Water Rafting Logo">
+/* Page wrapper sections */
+header,
+main,
+footer {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="trips.html">Trips</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+/* HEADINGS */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    text-align: center;
+    margin: 15px 0;
+    color: var(--accent2-color);
+}
 
-    <main>
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 15px;
+    border-bottom: 4px solid var(--accent1-color);
+    color: var(--text-on-primary);
+    gap: 10px;
+}
 
-        <h1>Zambezi White Water Rafting</h1>
+header img {
+    height: 70px;
+    display: block;
+}
 
-        <!-- CONTACT INFO -->
-        <section class="contact-info">
-            <p>123 Main River Street</p>
-            <p>Victoria Falls, Zimbabwe</p>
-            <p>+263 77 123 4567</p>
-            <p>info@zambezirafting.com</p>
-        </section>
+/* NAVIGATION */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+}
 
-        <!-- GRID -->
-        <section class="contact-grid">
+nav a {
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid var(--muted-border);
+    background-color: var(--muted-bg);
+    color: var(--link-text);
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 150ms ease, transform 120ms ease;
+}
 
-            <!-- MAP -->
-            <div class="map">
-                <iframe
-                  src="https://maps.google.com/maps?q=victoria%20falls&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            </div>
+nav a:hover,
+nav a:focus {
+    background-color: #ddd;
+    outline: none;
+    transform: translateY(-1px);
+}
 
-            <!-- FORM -->
-            <form>
+nav a:focus {
+    box-shadow: 0 0 0 3px rgba(50,140,193,0.25);
+}
 
-                <!-- NAME -->
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name">
+/* CONTACT INFO */
+.contact-info {
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
 
-                <!-- EMAIL -->
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
+/* CONTACT GRID */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
 
-                <!-- PURPOSE -->
-                <p><strong>Message Purpose</strong></p>
+/* MAP */
+.map {
+    width: 100%;
+    min-height: 450px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #f8f8f8;
+    position: relative;
+}
 
-                <input type="radio" id="general" name="purpose" value="general">
-                <label for="general">General Inquiry</label>
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
 
-                <input type="radio" id="reservation" name="purpose" value="reservation">
-                <label for="reservation">Reservation Question</label>
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-                <input type="radio" id="suggestion" name="purpose" value="suggestion">
-                <label for="suggestion">Website Suggestion</label>
+form label {
+    font-weight: bold;
+}
 
-                <!-- MESSAGE -->
-                <label for="message">Message</label>
-                <textarea id="message" name="message"
-                  placeholder="Type your message here"></textarea>
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--muted-border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: inherit;
+    background: #fff;
+}
 
-                <!-- CHECKBOX -->
-                <input type="checkbox" id="subscribe" name="subscribe">
-                <label for="subscribe">Please subscribe me to the monthly newsletter</label>
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
 
-                <!-- BUTTON -->
-                <button type="submit">Get in Touch</button>
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+    vertical-align: middle;
+}
 
-            </form>
+/* BUTTONS */
+button,
+input[type="submit"] {
+    padding: 10px 14px;
+    border: 1px solid var(--muted-border);
+    background-color: var(--muted-bg);
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 120ms ease, transform 100ms ease;
+}
 
-        </section>
+button:hover,
+input[type="submit"]:hover {
+    background-color: #ddd;
+    transform: translateY(-1px);
+}
 
-        <!-- EMPLOYEES -->
-        <section class="employees">
-            <h2>We Are Here to Serve You</h2>
+button:focus,
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(50,140,193,0.25);
+}
 
-            <div class="employee-grid">
+/* EMPLOYEES */
+.employees {
+    margin-top: 25px;
+    border: 1px solid var(--muted-border);
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+}
 
-                <figure>
-                    <img src="images/employee1.jpg" alt="John - Senior Rafting Guide">
-                    <figcaption>John - Senior Guide</figcaption>
-                </figure>
+.employee-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
 
-                <figure>
-                    <img src="images/employee2.jpg" alt="Mary - Safety Instructor">
-                    <figcaption>Mary - Safety Instructor</figcaption>
-                </figure>
+.employee-grid img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
 
-                <figure>
-                    <img src="images/employee3.jpg" alt="Peter - Trip Coordinator">
-                    <figcaption>Peter - Trip Coordinator</figcaption>
-                </figure>
+/* FOOTER */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+    text-align: center;
+    padding: 15px;
+    border-top: 4px solid var(--accent1-color);
+    margin-top: 20px;
+}
 
-            </div>
-        </section>
+/* SOCIAL MEDIA */
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
 
-    </main>
+.socialmedia img {
+    width: 30px;
+    height: auto;
+    display: block;
+}
 
-    <footer>
-        <p>© 2026 Zambezi White Water Rafting | Masango Dewheretsoko</p>
+/* RESPONSIVE */
+@media (max-width: 720px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-        <nav class="socialmedia">
-            <a href="#"><img src="images/facebook.png" alt="Visit our Facebook page"></a>
-            <a href="#"><img src="images/twitter.png" alt="Visit our Twitter page"></a>
-            <a href="#"><img src="images/instagram.png" alt="Visit our Instagram page"></a>
-        </nav>
-    </footer>
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
 
-</body>
-
-</html>
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
