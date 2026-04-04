@@ -1,170 +1,6 @@
 /* =========================
    VARIABLES
 ========================= */
-
-/* =========================
-   VARIABLES
-========================= */
-:root {
-    --primary-color: #0b3c5d;
-    --secondary-color: #328cc1;
-    --accent1-color: #d9b310;
-    --accent2-color: #1d2731;
-
-    --heading-font: Georgia, serif;
-    --body-font: Arial, sans-serif;
-}
-
-/* =========================
-   RESET
-========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* =========================
-   BODY
-========================= */
-body {
-    font-family: var(--body-font);
-    color: var(--accent2-color);
-    background-color: #fff;
-}
-
-/* =========================
-   HEADER
-========================= */
-header {
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-
-header img {
-    width: 80px;
-}
-
-/* NAV (HEADER + FOOTER LINKS) */
-nav a {
-    text-decoration: none;
-    color: white;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-/* =========================
-   HERO (REQUIRED FIX)
-========================= */
-.hero {
-    position: relative;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    font-family: var(--heading-font);
-}
-
-.hero article {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 15px;
-}
-
-.hero article img {
-    float: right;
-    width: 120px;
-    margin-left: 15px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-section {
-    padding: 20px;
-}
-
-h2 {
-    font-family: var(--heading-font);
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-}
-
-/* =========================
-   FIGURES (ADVENTURE)
-========================= */
-figure {
-    display: inline-block;
-    width: 180px;
-    margin: 10px;
-    text-align: center;
-}
-
-figure img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-
-/* SOCIAL MEDIA */
-.socialmedia {
-    margin-top: 10px;
-}
-
-.socialmedia a {
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-.socialmedia img {
-    width: 25px;
-}
-
-/* =========================
-   VARIABLE USAGE FIX (IMPORTANT)
-   (ensures ALL variables are used)
-========================= */
-
-header {
-    border-bottom: 4px solid var(--accent1-color);
-}
-
-footer {
-    border-top: 4px solid var(--accent1-color);
-}
-
-section {
-    background-color: #f4f4f4;
-    border-left: 5px solid var(--secondary-color);
-}
-
 :root {
     --primary-color: #0b3c5d;
     --secondary-color: #328cc1;
@@ -190,6 +26,7 @@ section {
 body {
     font-family: var(--body-font);
     color: var(--accent2-color);
+    background-color: #fff;
 }
 
 header,
@@ -214,9 +51,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cbb4e3;
+    background-color: var(--primary-color);
     padding: 15px;
-    border: 1px solid #999;
+    border-bottom: 4px solid var(--accent1-color);
 }
 
 header img {
@@ -253,26 +90,22 @@ nav a:hover {
 }
 
 /* =========================
-   CONTACT GRID (FIXED PROPERLY)
+   CONTACT GRID
 ========================= */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    /* ✅ spacing between map and form */
     align-items: stretch;
-    /* ✅ equal height */
 }
 
 /* =========================
-   MAP (FIXED)
+   MAP
 ========================= */
 .map {
     width: 100%;
-    height: 100%;
     min-height: 450px;
     overflow: hidden;
-    /* ✅ prevents overlap */
     border-radius: 6px;
 }
 
@@ -284,7 +117,7 @@ nav a:hover {
 }
 
 /* =========================
-   FORM (FIXED)
+   FORM
 ========================= */
 form {
     display: flex;
@@ -292,12 +125,10 @@ form {
     gap: 12px;
 }
 
-/* labels */
 form label {
     font-weight: bold;
 }
 
-/* inputs */
 form input,
 form textarea {
     width: 100%;
@@ -306,19 +137,17 @@ form textarea {
     border-radius: 4px;
 }
 
-/* textarea */
 textarea {
     height: 120px;
 }
 
-/* radio + checkbox alignment */
 input[type="radio"],
 input[type="checkbox"] {
     width: auto;
     margin-right: 6px;
 }
 
-/* button */
+/* BUTTON */
 button {
     padding: 10px;
     border: 1px solid #999;
@@ -349,10 +178,6 @@ button:hover {
     margin-top: 15px;
 }
 
-.employee-grid figure {
-    text-align: center;
-}
-
 .employee-grid img {
     width: 120px;
     height: 120px;
@@ -364,13 +189,15 @@ button:hover {
    FOOTER
 ========================= */
 footer {
-    background-color: #cbb4e3;
-    border: 1px solid #999;
-    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
     text-align: center;
+    padding: 15px;
+    border-top: 4px solid var(--accent1-color);
     margin-top: 20px;
 }
 
+/* SOCIAL MEDIA */
 .socialmedia {
     display: flex;
     justify-content: center;
