@@ -58,13 +58,13 @@ section {
 
 section h2 {
     text-align: center;
-    color: black;
+    color: var(--accent2-color); /* FIXED contrast */
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
 /* =========================
-   HEADER
+   HEADER (MATCHES ALL PAGES)
 ========================= */
 header {
     display: grid;
@@ -79,14 +79,12 @@ header {
 
 header img {
     width: 100px;
-    height: auto;
     justify-self: center;
 }
 
 header nav {
     display: flex;
     justify-content: center;
-    gap: 0;
 }
 
 header nav a {
@@ -104,7 +102,7 @@ header nav a:hover {
 }
 
 /* =========================
-   HERO (ABOUT PAGE)
+   HERO (INDEX PAGE)
 ========================= */
 .hero {
     position: relative;
@@ -112,75 +110,30 @@ header nav a:hover {
     border: 1px solid var(--primary-color);
 }
 
-.hero > img {
+.hero img {
     width: 100%;
-    height: 450px;
+    height: 500px;
     object-fit: cover;
-    display: block;
 }
 
 .hero h1 {
     position: absolute;
-    top: 25px;
-    width: 100%;
-    text-align: center;
-    font-size: 2.2rem;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    right: 40px;
-    background-color: rgba(255, 255, 255, 0.88);
-    padding: 20px;
-    border: 1px solid var(--primary-color);
-    overflow: hidden;
-}
-
-.hero article img {
-    float: right;
-    width: 120px;
-    height: auto;
-    margin-left: 20px;
-    border: 3px solid var(--secondary-color);
-}
-
-/* =========================
-   HOME PAGE
-========================= */
-.home-hero {
-    position: relative;
-    margin: 20px 0;
-    border: 1px solid var(--primary-color);
-}
-
-.home-hero img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-}
-
-.home-hero h1 {
-    position: absolute;
     top: 30px;
     width: 100%;
     text-align: center;
-    font-size: 2.5rem;
     color: white;
     background-color: rgba(11, 60, 93, 0.7);
     padding: 15px;
 }
 
+/* =========================
+   CTA (INDEX + TRIPS)
+========================= */
 .cta {
     text-align: center;
 }
 
-.cta-button {
+.btn-cta {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 24px;
@@ -191,25 +144,28 @@ header nav a:hover {
     border-radius: 5px;
 }
 
-.cta-button:hover {
+.btn-cta:hover {
     background-color: var(--accent1-color);
     color: black;
 }
 
-.newsletter-form {
+/* =========================
+   NEWSLETTER (INDEX)
+========================= */
+.newsletter form {
     display: grid;
     gap: 10px;
     max-width: 500px;
     margin: 0 auto;
 }
 
-.newsletter-form input {
+.newsletter input {
     padding: 10px;
     border: 1px solid var(--primary-color);
     border-radius: 4px;
 }
 
-.newsletter-form button {
+.newsletter button {
     padding: 10px;
     border: 1px solid var(--primary-color);
     background-color: var(--secondary-color);
@@ -219,25 +175,28 @@ header nav a:hover {
     border-radius: 4px;
 }
 
-.newsletter-form button:hover {
+.newsletter button:hover {
     background-color: var(--accent1-color);
     color: black;
 }
 
+/* =========================
+   HOME GRID (INDEX)
+========================= */
 .home-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.grid-item {
+.home-grid div {
     background-color: white;
     padding: 15px;
     border: 1px solid var(--primary-color);
     text-align: center;
 }
 
-.grid-item img {
+.home-grid img {
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -245,201 +204,43 @@ header nav a:hover {
 }
 
 /* =========================
-   HISTORY SECTION (ABOUT PAGE)
-========================= */
-.history-content {
-    display: grid;
-    grid-template-columns: 1fr 220px 1fr;
-    gap: 25px;
-    align-items: center;
-}
-
-.history-content img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* =========================
-   ADVENTURES SECTION (ABOUT PAGE)
-========================= */
-.adventure-gallery {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.adventure-gallery figure {
-    flex: 1 1 150px;
-    text-align: center;
-}
-
-.adventure-gallery img {
-    width: 100%;
-    max-width: 150px;
-    height: 100px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    border-radius: 4px;
-}
-
-.adventure-gallery figcaption {
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-/* =========================
-   CONTACT PAGE
-========================= */
-.contact-info {
-    text-align: center;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: stretch;
-}
-
-.map {
-    width: 100%;
-    min-height: 450px;
-    overflow: hidden;
-    border-radius: 6px;
-}
-
-.map iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 450px;
-    border: 0;
-    display: block;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid var(--primary-color);
-    border-radius: 6px;
-}
-
-form label {
-    font-weight: bold;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--primary-color);
-    border-radius: 4px;
-    font-family: var(--body-font);
-}
-
-textarea {
-    height: 120px;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-    width: auto;
-    margin-right: 6px;
-}
-
-button {
-    padding: 10px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--secondary-color);
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-}
-
-button:hover {
-    background-color: var(--accent1-color);
-    color: black;
-}
-
-/* =========================
-   EMPLOYEES (CONTACT PAGE)
-========================= */
-.employees {
-    margin-top: 25px;
-    border: 1px solid var(--primary-color);
-    padding: 15px;
-    text-align: center;
-    background-color: #f4f4f4;
-}
-
-.employee-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.employee-grid figure {
-    text-align: center;
-}
-
-.employee-grid img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-/* =========================
    TRIPS PAGE
 ========================= */
-.trips-cta {
-    text-align: center;
-}
-
-.trip-grid {
+.trips {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.trip-card {
+.trips div {
     background-color: white;
     border: 1px solid var(--primary-color);
     padding: 15px;
     text-align: center;
 }
 
-.trip-card img {
+.trips img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     margin-bottom: 15px;
 }
 
-.trip-table-section table {
+/* TABLE */
+.trips-table table {
     width: 100%;
     border-collapse: collapse;
     background-color: white;
 }
 
-.trip-table-section th,
-.trip-table-section td {
+.trips-table th,
+.trips-table td {
     border: 1px solid var(--primary-color);
     padding: 12px;
     text-align: center;
 }
 
-.trip-table-section th {
+.trips-table th {
     background-color: var(--secondary-color);
     color: white;
 }
@@ -451,12 +252,10 @@ footer {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color); /* FIXED contrast */
     border-top: 4px solid var(--accent1-color);
     padding: 15px 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 footer p {
@@ -466,17 +265,11 @@ footer p {
 
 .socialmedia {
     display: flex;
-    justify-content: flex-end;
     gap: 12px;
-}
-
-.socialmedia a {
-    text-decoration: none;
 }
 
 .socialmedia img {
     width: 30px;
-    height: 30px;
 }
 
 /* =========================
@@ -493,36 +286,17 @@ footer p {
         flex-wrap: wrap;
     }
 
-    .hero > img,
-    .home-hero img {
+    .hero img {
         height: auto;
     }
 
     .hero h1 {
         position: static;
-        background-color: rgba(255, 255, 255, 0.85);
     }
 
-    .hero article {
-        position: static;
-        margin: 20px;
-    }
-
-    .hero article img {
-        float: none;
-        display: block;
-        margin: 0 auto 15px auto;
-    }
-
-    .history-content,
     .home-grid,
-    .contact-grid,
-    .trip-grid {
+    .trips {
         grid-template-columns: 1fr;
-    }
-
-    .adventure-gallery {
-        justify-content: center;
     }
 
     footer {
