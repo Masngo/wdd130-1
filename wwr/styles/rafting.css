@@ -1,5 +1,3 @@
-correct this css file:
-
 /* =========================
    VARIABLES
 ========================= */
@@ -51,6 +49,9 @@ main h1 {
     margin: 20px 0;
 }
 
+/* =========================
+   SECTIONS
+========================= */
 section {
     background-color: #f4f4f4;
     border: 1px solid var(--primary-color);
@@ -66,11 +67,10 @@ section h2 {
 }
 
 /* =========================
-   HEADER (FIXED NAVIGATION)
+   HEADER + NAVIGATION
 ========================= */
 header {
     display: flex;
-    /* changed from grid */
     justify-content: space-between;
     align-items: center;
     background-color: var(--secondary-color);
@@ -84,19 +84,13 @@ header img {
     width: 100px;
 }
 
-/* 🔥 FIX: FORCE HORIZONTAL NAV */
 header nav {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
-    /* added spacing */
 }
 
 header nav a {
     display: inline-block;
-    /* important fix */
     text-decoration: none;
     padding: 10px 20px;
     border: 1px solid var(--primary-color);
@@ -111,7 +105,7 @@ header nav a:hover {
 }
 
 /* =========================
-   HERO
+   HERO (INDEX / ABOUT)
 ========================= */
 .hero {
     position: relative;
@@ -123,7 +117,6 @@ header nav a:hover {
     width: 100%;
     height: 450px;
     object-fit: cover;
-    display: block;
 }
 
 .hero h1 {
@@ -131,26 +124,8 @@ header nav a:hover {
     top: 25px;
     width: 100%;
     text-align: center;
-    font-size: 2.2rem;
-    color: black;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 10px;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    right: 40px;
-    background-color: rgba(255, 255, 255, 0.88);
-    padding: 20px;
-    border: 1px solid var(--primary-color);
-}
-
-.hero article img {
-    float: right;
-    width: 120px;
-    margin-left: 20px;
 }
 
 /* =========================
@@ -168,7 +143,6 @@ header nav a:hover {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
 }
 
 .cta-button:hover {
@@ -225,280 +199,62 @@ header nav a:hover {
 }
 
 /* =========================
-   FOOTER
+   CONTACT PAGE (FIXED)
 ========================= */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--primary-color);
-    border-top: 4px solid var(--accent1-color);
-    padding: 15px 20px;
-    margin: 20px auto;
-}
-
-footer p {
-    color: white;
-}
-
-.socialmedia {
-    display: flex;
-    gap: 12px;
-}
-
-.socialmedia img {
-    width: 30px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    header nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .home-grid,
-    .trip-grid {
-        grid-template-columns: 1fr;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-}
-
-/* =========================
-   VARIABLES
-========================= */
-:root {
-    --primary-color: #0b3c5d;
-    --secondary-color: #328cc1;
-    --accent1-color: #d9b310;
-    --accent2-color: #1d2731;
-    --heading-font: Georgia, serif;
-    --body-font: Arial, sans-serif;
-}
-
-/* =========================
-   RESET
-========================= */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* =========================
-   BASE STYLES
-========================= */
-body {
-    font-family: var(--body-font);
-    color: var(--accent2-color);
-    background-color: white;
-    line-height: 1.6;
-}
-
-header,
-main,
-footer {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
-
-main h1 {
-    text-align: center;
-    margin: 20px 0;
-}
-
-section {
-    background-color: #f4f4f4;
-    border: 1px solid var(--primary-color);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-section h2 {
-    text-align: center;
-    color: black;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-/* =========================
-   HEADER (FIXED NAVIGATION)
-========================= */
-header {
-    display: flex;
-    /* changed from grid */
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary-color);
-    padding: 15px 20px;
-    border: 1px solid var(--primary-color);
-    margin-top: 20px;
-    border-bottom: 4px solid var(--accent1-color);
-}
-
-header img {
-    width: 100px;
-}
-
-/* 🔥 FIX: FORCE HORIZONTAL NAV */
-header nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    /* added spacing */
-}
-
-header nav a {
-    display: inline-block;
-    /* important fix */
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid var(--primary-color);
-    background-color: white;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-header nav a:hover {
-    background-color: var(--accent1-color);
-    color: black;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-    position: relative;
-    margin: 20px 0;
-    border: 1px solid var(--primary-color);
-}
-
-.hero > img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: block;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 25px;
-    width: 100%;
-    text-align: center;
-    font-size: 2.2rem;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    right: 40px;
-    background-color: rgba(255, 255, 255, 0.88);
-    padding: 20px;
-    border: 1px solid var(--primary-color);
-}
-
-.hero article img {
-    float: right;
-    width: 120px;
-    margin-left: 20px;
-}
-
-/* =========================
-   HOME PAGE
-========================= */
-.cta {
+.contact-info {
     text-align: center;
 }
 
-.cta-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 24px;
-    background-color: var(--secondary-color);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.cta-button:hover {
-    background-color: var(--accent1-color);
-    color: black;
-}
-
-.newsletter-form {
-    display: grid;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.home-grid {
+.contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.grid-item {
-    background-color: white;
-    padding: 15px;
+.map {
+    height: 300px;
     border: 1px solid var(--primary-color);
-    text-align: center;
 }
 
-.grid-item img {
+.map iframe {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input,
+form textarea {
+    padding: 8px;
+    border: 1px solid var(--primary-color);
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    cursor: pointer;
 }
 
 /* =========================
-   TRIPS PAGE
+   EMPLOYEES
 ========================= */
-.trip-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.employee-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
-.trip-card {
-    background-color: white;
-    border: 1px solid var(--primary-color);
-    padding: 15px;
-    text-align: center;
-}
-
-.trip-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+.employee-grid img {
+    width: 120px;
 }
 
 /* =========================
@@ -543,8 +299,15 @@ footer p {
     }
 
     .home-grid,
-    .trip-grid {
+    .trip-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .employee-grid {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
     }
 
     footer {
